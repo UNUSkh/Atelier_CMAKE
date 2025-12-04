@@ -28,7 +28,7 @@ jobs:
           cmake ..
           make
           ./src/calculator add 10 5
-      - name: Test fonction add
+      - name: Test fonction carree
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
