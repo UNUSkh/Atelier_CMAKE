@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+        
       - name: Build project
         run: |
           mkdir build
@@ -31,6 +31,72 @@ jobs:
       - name: Test fonction add
         run: |
           ./build/src/calculator add 10 5
+  Test_Sub:
+    runs-on: ubuntu-latest
+    needs: Compilation
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+
+      - name: Test fonction sub
+        run: |
+          ./build/src/calculator sub 10 5
+
+  Test_Mul:
+    runs-on: ubuntu-latest
+    needs: Compilation
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+
+      - name: Test fonction Mul
+        run: |
+          ./build/src/calculator mul 10 5
+    
+  Test_Div:
+    runs-on: ubuntu-latest
+    needs: Compilation
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+
+      - name: Test fonction div
+        run: |
+          ./build/src/calculator div 10 5
+  Test_Carre:
+    runs-on: ubuntu-latest
+    needs: Compilation
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
 
       - name: Test fonction carree
         run: |
